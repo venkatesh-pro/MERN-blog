@@ -1,0 +1,150 @@
+.editButton {
+  display: inline;
+  position: fixed;
+  right: 0;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  bottom: 5px;
+  height: 70px;
+  z-index: 1;
+
+  width: 70px;
+}
+.editButton button {
+  position: absolute;
+  top: -20%;
+  background: transparent;
+  color: white;
+  right: 4%;
+  border-radius: 50%;
+  border: none;
+}
+.container p code {
+  background: rgb(18, 172, 82);
+  padding: 2px;
+}
+.container pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow: auto;
+  display: block;
+  word-wrap: break-word;
+}
+
+.my_title {
+  background: #7e7f85;
+  margin-top: 40px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.my_title h1 {
+  display: flex;
+  align-items: center;
+}
+.markdownContainer p > a {
+  text-decoration: underline;
+  color: rgb(26, 144, 208);
+}
+
+.markdownContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.markdownContainer img {
+  display: flex;
+  margin: 0 auto;
+}
+.markdownContainer img[title~='half'] {
+  object-fit: cover;
+  max-height: 600px;
+}
+.markdownContainer img[title~='full'] {
+  object-fit: cover;
+  height: 600px;
+}
+.markdownContainer strong {
+  background: white;
+  box-shadow: 1px 1px 10px rgb(27, 25, 25);
+}
+.markdownContainer li strong {
+  background: white;
+  background: red;
+  padding: 0 4px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(27, 25, 25);
+}
+.blog_container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media (max-width: 1105px) {
+  .markdownContainer img[title~='half'] {
+    object-fit: cover;
+    max-height: 500px;
+  }
+  .markdownContainer img[title~='full'] {
+    object-fit: cover;
+    height: 500px;
+  }
+}
+@media (max-width: 921px) {
+  .markdownContainer img[title~='half'] {
+    object-fit: cover;
+    max-height: 400px;
+  }
+  .markdownContainer img[title~='full'] {
+    object-fit: cover;
+    height: 400px;
+  }
+}
+@media (max-width: 749px) {
+  .markdownContainer img[title~='half'] {
+    object-fit: cover;
+    max-height: 300px;
+  }
+  .markdownContainer img[title~='full'] {
+    object-fit: cover;
+    height: 300px;
+  }
+}
+@media (max-width: 554px) {
+  .markdownContainer img[title~='half'] {
+    object-fit: cover;
+    max-height: 200px;
+  }
+  .markdownContainer img[title~='full'] {
+    object-fit: cover;
+    height: 200px;
+  }
+}
+@media (max-width: 371px) {
+  .markdownContainer img[title~='half'] {
+    object-fit: cover;
+    max-height: 150px;
+  }
+  .markdownContainer img[title~='full'] {
+    object-fit: cover;
+    height: 150px;
+  }
+}

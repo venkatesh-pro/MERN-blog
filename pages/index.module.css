@@ -1,0 +1,197 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+.cardContainer .cardContainer2 {
+  border: 1px solid grey;
+  padding: 10px;
+  width: 300px;
+  position: relative;
+}
+.imageContainer {
+  /* width: 100%; */
+  width: 300px;
+  height: 300px;
+}
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.infoContainer {
+  font-size: 20px;
+}
+.infoContainer a {
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 6px 14px;
+  background: #1cb146;
+  color: #eee;
+  border: 1px solid #3bff0a;
+  display: block;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 4px;
+}
+.infoContainer a:active,
+.infoContainer a:hover {
+  background: #14642d;
+  transition: all 0.4s ease;
+}
+.DeleteButton {
+  position: absolute;
+  top: -3%;
+  right: -2%;
+  background: transparent;
+  border: none;
+  color: red;
+}
+@media (max-width: 1100px) {
+  .imageContainer {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  .infoContainer a {
+    width: 220px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 270px;
+  }
+}
+@media (max-width: 1067px) {
+  .imageContainer {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  .infoContainer a {
+    width: 220px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 260px;
+  }
+}
+@media (max-width: 937px) {
+  .imageContainer {
+    width: 220px;
+    height: 220px;
+  }
+  .infoContainer a {
+    width: 190px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 230px;
+  }
+  .cardContainer {
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 937px) {
+  .imageContainer {
+    width: 220px;
+    height: 220px;
+  }
+  .infoContainer a {
+    width: 190px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 230px;
+  }
+  .cardContainer {
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 808px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imageContainer {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  .infoContainer a {
+    width: 220px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 270px;
+  }
+}
+
+@media (max-width: 619px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imageContainer {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+  .infoContainer a {
+    width: 190px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 230px;
+  }
+  .container > h1 {
+    font-size: 15px;
+  }
+}
+@media (max-width: 540px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imageContainer {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  .infoContainer a {
+    width: 270px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 320px;
+  }
+  .container > h1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .imageContainer {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+  }
+  .infoContainer a {
+    width: 210px;
+    margin: 0 auto;
+  }
+  .cardContainer .cardContainer2 {
+    width: 250px;
+  }
+  .container > h1 {
+    font-size: 15px;
+  }
+}

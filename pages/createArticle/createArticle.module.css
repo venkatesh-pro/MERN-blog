@@ -1,0 +1,80 @@
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto;
+  background: #eeeeee;
+}
+.container input {
+  width: 90%;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin: 10px;
+  background: #282a35;
+  color: white;
+}
+.container textarea {
+  width: 90%;
+  padding: 10px 0;
+  height: 300px;
+  background: #282a35;
+  color: white;
+}
+.container button {
+  margin: 10px;
+  width: 91%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #1cb146;
+  color: white;
+  cursor: pointer;
+}
+.container button:hover {
+  margin: 10px;
+  width: 91%;
+  padding: 10px;
+  border: none;
+}
+.container button:disabled,
+.container button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.container input::-webkit-input-placeholder {
+  font-size: 18px;
+}
+.container textarea::-webkit-input-placeholder {
+  font-size: 18px;
+}
+
+@media (max-width: 440px) {
+  .container {
+    width: 350px;
+  }
+}
+
+@media (max-width: 377px) {
+  .container {
+    width: 320px;
+  }
+}
+@media (max-width: 332px) {
+  .container {
+    width: 290px;
+  }
+}
+@media (max-width: 311px) {
+  .container {
+    width: 260px;
+  }
+}
+@media (max-width: 290px) {
+  .container {
+    width: 240px;
+  }
+}

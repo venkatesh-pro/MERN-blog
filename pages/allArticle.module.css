@@ -1,0 +1,95 @@
+.addButton {
+  display: inline;
+  position: fixed;
+  right: 0;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  bottom: 5px;
+  height: 70px;
+  z-index: 1;
+
+  width: 70px;
+}
+
+.smallQuotesParaTag {
+  position: fixed;
+  z-index: 1;
+  right: 1%;
+  font-size: 10px;
+  color: rgb(123, 175, 18);
+  bottom: 15%;
+  margin-right: 20px;
+}
+
+.addButtonIcon {
+  animation: example 5s infinite;
+  cursor: pointer;
+}
+.articleContainer > h1 {
+  text-transform: capitalize;
+  text-align: center;
+}
+.articleContainer a {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+.articleContainer a:hover {
+  text-decoration: underline;
+}
+.articleNameH1 {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.articleNameH1 h1 {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.articleNameH1 button {
+  margin-top: 26px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  margin-left: -15px;
+}
+.articleNameH1 button:hover {
+  color: red;
+}
+@keyframes example {
+  0% {
+    transform: rotateY(0);
+    color: white;
+  }
+  100% {
+    transform: rotateY(360deg);
+    color: green;
+  }
+}
+
+@media (max-width: 757px) {
+  .articleNameH1 {
+    font-size: 10px;
+  }
+  .articleContainer > h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 449px) {
+  .articleNameH1 {
+    font-size: 7px;
+  }
+  .articleContainer > h1 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .articleContainer > h1 {
+    font-size: 18px;
+  }
+}

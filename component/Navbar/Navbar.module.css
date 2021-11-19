@@ -1,0 +1,55 @@
+.container {
+  width: 100vw;
+  background: #eee;
+  height: 8vh;
+  box-shadow: 0 0 10px black;
+}
+.container h1 {
+  color: black;
+  cursor: pointer;
+}
+.container div {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
+.container ul li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container .DropDownInNavbar {
+  justify-content: flex-end;
+  min-height: 100px;
+}
+.container img {
+  margin-right: 50px;
+}
+.container .logoContainer {
+  margin-left: 50px;
+}
+.container .logoContainer img {
+  width: 60px;
+  cursor: pointer;
+  height: 60px;
+}
+.container a {
+  margin-right: 5px;
+  padding: 6px 14px;
+  background: #1cb146;
+  color: #eee;
+  border: 1px solid #3bff0a;
+  text-decoration: none;
+}
+.container a:active,
+.container a:hover {
+  background: #14642d;
+  transition: all 0.4s ease;
+}
