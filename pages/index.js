@@ -30,28 +30,31 @@ const Index = () => {
   }, [])
 
   const handleDelete = async (id, picture) => {
-    try {
-      const token = window.localStorage.getItem('user')
-        ? JSON.parse(window.localStorage.getItem('user'))
-        : ''
-      const config = {
-        headers: {
-          authorization: `Bearer ${token.token}`,
-        },
-      }
-      const { data } = await axios.delete(
-        `https://venkatesh-blog.herokuapp.com/topicNameDel/${id}`,
-        config
-      )
+    let out = window.confirm('Are you sure')
+    if (out) {
+      try {
+        const token = window.localStorage.getItem('user')
+          ? JSON.parse(window.localStorage.getItem('user'))
+          : ''
+        const config = {
+          headers: {
+            authorization: `Bearer ${token.token}`,
+          },
+        }
+        const { data } = await axios.delete(
+          `https://venkatesh-blog.herokuapp.com/topicNameDel/${id}`,
+          config
+        )
 
-      const { data: da } = await axios.post(
-        'https://venkatesh-blog.herokuapp.com/image-delete',
-        { image: picture }
-      )
-      addToast('Deleted', { appearance: 'success' })
-      window.location.assign('/')
-    } catch (error) {
-      console.log(error)
+        const { data: da } = await axios.post(
+          'https://venkatesh-blog.herokuapp.com/image-delete',
+          { image: picture }
+        )
+        addToast('Deleted', { appearance: 'success' })
+        window.location.assign('/')
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
   return (

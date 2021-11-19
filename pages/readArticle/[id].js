@@ -39,11 +39,15 @@ const ReadArticle = () => {
   }, [routerId])
 
   const handleDelete = async (id) => {
-    const { data } = await axios.delete(
-      `https://venkatesh-blog.herokuapp.com/${id}`
-    )
-    addToast('Deleted', { appearance: 'success' })
-    router.push('/')
+    let out = window.confirm('Are you sure')
+
+    if (out) {
+      const { data } = await axios.delete(
+        `https://venkatesh-blog.herokuapp.com/${id}`
+      )
+      addToast('Deleted', { appearance: 'success' })
+      router.push('/')
+    }
   }
   return (
     <div className={styles.container}>
