@@ -22,6 +22,7 @@
   height: 300px;
   background: #282a35;
   color: white;
+  caret-color: #07ca6f;
 }
 .container button {
   margin: 10px;
