@@ -96,7 +96,9 @@
   position: relative;
   padding-left: 5px;
 }
-
+.markdownContainer h1 a{
+  color: #f36d33;
+}
 .blog_container {
   width: 90%;
   display: flex;
