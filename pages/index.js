@@ -9,7 +9,6 @@ import styles from './index.module.css'
 import { useToasts } from 'react-toast-notifications'
 
 const Index = () => {
-  
   const { addToast } = useToasts()
 
   const [titleData, setTitleData] = useState([])
@@ -50,7 +49,7 @@ const Index = () => {
                     <img src={d.picture && d.picture.Location} alt={d.title} />
                   </div>
                   <h1 className={styles.infoContainer}>
-                    <Link href={`/${d && d._id}`}>{`Learn ${d.title}`}</Link>
+                    <Link href={`/${d && d._id}`}>{`${d.title}`}</Link>
                   </h1>
                   <button
                     onClick={() => handleDelete(d._id, d.picture)}
