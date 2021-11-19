@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import LayOut from '../component/LayOut'
 import { Delete } from '@material-ui/icons'
+import { Context } from '../context/index'
 import Image from 'next/image'
 import styles from './index.module.css'
 import { useToasts } from 'react-toast-notifications'
 
 const Index = () => {
   const { addToast } = useToasts()
+
+  const {
+    state: { user },
+    dispatch,
+  } = useContext(Context)
 
   const [titleData, setTitleData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -24,15 +30,29 @@ const Index = () => {
   }, [])
 
   const handleDelete = async (id, picture) => {
-    const { data } = await axios.delete(
-      `https://venkatesh-blog.herokuapp.com/topicNameDel/${id}`
-    )
-    const { data: da } = await axios.post(
-      'https://venkatesh-blog.herokuapp.com/image-delete',
-      { image: picture }
-    )
-    addToast('Deleted', { appearance: 'success' })
-    window.location.assign('/')
+    try {
+      const token = window.localStorage.getItem('user')
+        ? JSON.parse(window.localStorage.getItem('user'))
+        : ''
+      const config = {
+        headers: {
+          authorization: `Bearer ${token.token}`,
+        },
+      }
+      const { data } = await axios.delete(
+        `https://venkatesh-blog.herokuapp.com/topicNameDel/${id}`,
+        config
+      )
+
+      const { data: da } = await axios.post(
+        'https://venkatesh-blog.herokuapp.com/image-delete',
+        { image: picture }
+      )
+      addToast('Deleted', { appearance: 'success' })
+      window.location.assign('/')
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <LayOut>
@@ -51,12 +71,17 @@ const Index = () => {
                   <h1 className={styles.infoContainer}>
                     <Link href={`/${d && d._id}`}>{`${d.title}`}</Link>
                   </h1>
-                  <button
-                    onClick={() => handleDelete(d._id, d.picture)}
-                    className={styles.DeleteButton}
-                  >
-                    <Delete />
-                  </button>
+                  {user &&
+                    user.user &&
+                    user.user.role &&
+                    user.user.role.includes('ADMIN') && (
+                      <button
+                        onClick={() => handleDelete(d._id, d.picture)}
+                        className={styles.DeleteButton}
+                      >
+                        <Delete />
+                      </button>
+                    )}
                 </div>
               )
             })}
