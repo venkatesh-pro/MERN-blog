@@ -20,9 +20,9 @@ const Signup = () => {
   // router
   const router = useRouter()
 
-  const [name, setName] = useState('venkat')
-  const [email, setEmail] = useState('venakt@g.c')
-  const [password, setPassword] = useState('1234')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [preview, setPreview] = useState('')
   const [image, setImage] = useState('')
   const [isDisable, setIsDisable] = useState(false)
