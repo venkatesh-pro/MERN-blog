@@ -3,10 +3,12 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import { Context } from '../../context/index'
 import styles from './createArticle.module.css'
-import LayOut from '../../component/LayOut'
 import { useToasts } from 'react-toast-notifications'
-const index = () => {
+import LayOut from '../../component/LayOut'
+
+const Index = () => {
   const { addToast } = useToasts()
+
   const {
     state: { user },
     dispatch,
@@ -77,4 +79,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

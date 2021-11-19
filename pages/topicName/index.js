@@ -5,9 +5,10 @@ import Resizer from 'react-image-file-resizer'
 import LayOut from '../../component/LayOut'
 import styles from './topicName.module.css'
 import { Publish } from '@material-ui/icons'
+import Image from 'next/image'
 import { useToasts } from 'react-toast-notifications'
 
-const index = () => {
+const Index = () => {
   const { addToast } = useToasts()
 
   const [inputValue, setInputValue] = useState('')
@@ -86,6 +87,7 @@ const index = () => {
             width='40px'
             height='40px'
             style={{ borderRadius: '50%' }}
+            alt='Image'
           ></img>
         )}
         <button disabled={isDisable} type='submit' onClick={handleSubmit}>
@@ -96,4 +98,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

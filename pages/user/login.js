@@ -7,7 +7,7 @@ import { Context } from '../../context/index'
 import LayOut from '../../component/LayOut'
 import { useToasts } from 'react-toast-notifications'
 
-const login = () => {
+const Login = () => {
   const { addToast } = useToasts()
 
   // state
@@ -82,7 +82,7 @@ const login = () => {
             </div>
             <div>
               <p>
-                Didn't have a account,
+                Not have an account,
                 <Link href='/user/signup'>Create</Link>
               </p>
             </div>
@@ -93,4 +93,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

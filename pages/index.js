@@ -4,13 +4,13 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import LayOut from '../component/LayOut'
 import { Delete } from '@material-ui/icons'
+import Image from 'next/image'
+import styles from './index.module.css'
 import { useToasts } from 'react-toast-notifications'
 
-import styles from './index.module.css'
-const index = () => {
+const Index = () => {
+  
   const { addToast } = useToasts()
-
-  const router = useRouter()
 
   const [titleData, setTitleData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -68,4 +68,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

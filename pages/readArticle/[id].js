@@ -8,10 +8,9 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import styles from './readArticle.module.css'
 import { Delete, Edit, Whatshot } from '@material-ui/icons'
 import { useToasts } from 'react-toast-notifications'
-
 import LayOut from '../../component/LayOut'
 
-const ds = () => {
+const ReadArticle = () => {
   const { addToast } = useToasts()
 
   const {
@@ -23,7 +22,7 @@ const ds = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const router = useRouter()
-
+  const routerId = router && router.query && router.query.id
   useEffect(() => {
     const fetchAllData = async () => {
       setIsLoading(true)
@@ -37,7 +36,7 @@ const ds = () => {
       setIsLoading(false)
     }
     fetchAllData()
-  }, [router && router.query && router.query.id])
+  }, [routerId])
 
   const handleDelete = async (id) => {
     const { data } = await axios.delete(
@@ -91,17 +90,17 @@ const ds = () => {
             </div>
             <div className={styles.markdownContainer}>
               <ReactMarkdown
-                children={articleData && articleData.markdown}
                 components={{
                   code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || '')
                     return !inline && match ? (
                       <SyntaxHighlighter
-                        children={String(children).replace(/\n$/, '')}
                         language={match[1]}
                         PreTag='div'
                         {...props}
-                      />
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
                     ) : (
                       <code className={className} {...props}>
                         {children}
@@ -109,7 +108,9 @@ const ds = () => {
                     )
                   },
                 }}
-              />
+              >
+                {articleData && articleData.markdown}
+              </ReactMarkdown>
             </div>
           </div>
         )}
@@ -118,4 +119,4 @@ const ds = () => {
   )
 }
 
-export default ds
+export default ReadArticle

@@ -7,7 +7,7 @@ import LayOut from '../component/LayOut'
 import { AddCircle, ThumbUp, AccessTimeRounded } from '@material-ui/icons'
 import styles from './allArticle.module.css'
 
-const ds = () => {
+const SingleTopic = () => {
   const {
     state: { user },
     dispatch,
@@ -49,7 +49,6 @@ const ds = () => {
         </div>
       ) : (
         <>
-          <p className={styles.smallQuotesParaTag}>Don't Waste Your Time</p>
           <div className={styles.addButton}>
             <AccessTimeRounded
               className={styles.addButtonIcon}
@@ -88,4 +87,4 @@ const ds = () => {
   )
 }
 
-export default ds
+export default SingleTopic

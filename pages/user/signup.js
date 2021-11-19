@@ -6,9 +6,11 @@ import { useRouter } from 'next/router'
 import { Context } from '../../context'
 import LayOut from '../../component/LayOut'
 import styles from './signup.module.css'
-import { useToasts } from 'react-toast-notifications'
 import { Publish } from '@material-ui/icons'
-const signup = () => {
+import Image from 'next/image'
+import { useToasts } from 'react-toast-notifications'
+
+const Signup = () => {
   const { addToast } = useToasts()
 
   const {
@@ -97,6 +99,7 @@ const signup = () => {
                   src={preview}
                   width='40px'
                   height='40px'
+                  alt='image'
                   style={{ borderRadius: '50%' }}
                 ></img>
               )}
@@ -137,4 +140,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup

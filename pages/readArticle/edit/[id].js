@@ -3,9 +3,10 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import { Context } from '../../../context/index'
 import styles from './edit.module.css'
-import { useToasts } from 'react-toast-notifications'
 import LayOut from '../../../component/LayOut'
-const index = () => {
+import { useToasts } from 'react-toast-notifications'
+
+const Index = () => {
   const { addToast } = useToasts()
 
   const {
@@ -17,7 +18,7 @@ const index = () => {
   const [isDisable, setIsDisable] = useState(false)
 
   const router = useRouter()
-
+  const routerId = router && router.query && router.query.id
   useEffect(() => {
     const fetchAllData = async () => {
       const { data } = await axios.get(
@@ -31,7 +32,7 @@ const index = () => {
       setMarkdown(data.markdown)
     }
     fetchAllData()
-  }, [router && router.query && router.query.id])
+  }, [routerId])
 
   const [title, setTitle] = useState()
   const [markdown, setMarkdown] = useState()
@@ -99,4 +100,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

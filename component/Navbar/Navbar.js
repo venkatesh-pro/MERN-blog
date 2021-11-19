@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './Navbar.module.css'
 import { Context } from '../../context/index'
 import DropDown from '../DropDown/DropDown'
+import Image from 'next/image'
 const Navbar = () => {
   const {
     state: { user },
@@ -38,6 +39,7 @@ const Navbar = () => {
                     user.user.profilePic &&
                     user.user.profilePic.Location
                   }`}
+                  alt='Image'
                 ></img>
               </li>
             </>
