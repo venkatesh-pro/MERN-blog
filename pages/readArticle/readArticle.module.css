@@ -89,6 +89,14 @@
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgb(27, 25, 25);
 }
+.markdownContainer blockquote p {
+  margin-top: -10px;
+  margin-left: 10px;
+  border-left: 3px solid #f36d33;
+  position: relative;
+  padding-left: 5px;
+}
+
 .blog_container {
   width: 90%;
   display: flex;
