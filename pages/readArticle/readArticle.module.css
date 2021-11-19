@@ -113,6 +113,9 @@
     object-fit: cover;
     max-height: 400px;
   }
+  .my_title h1 {
+    font-size: 16px;
+  }
   .markdownContainer img[title~='full'] {
     object-fit: cover;
     height: 400px;
